@@ -1,13 +1,17 @@
-/*기본값*/
+/* 기본 리셋 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     color: #333;
     background: #f9f9f9;
+    line-height: 1.6;
+
 }
 
 a {
@@ -16,37 +20,47 @@ a {
 }
 
 /* 네비게이션 바 */
+
 nav {
     position: fixed;
-    display: flex;
+    width: 100%;
     background: white;
     top: 0;
     left: 0;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding:  16px 32px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+}
+
+
+
 nav .logo {
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
 nav ul {
     list-style: none;
-    display: flex; /*가로정렬*/
+    display: flex;
+    /*가로정렬*/
 }
 
 nav ul li {
-    margin-left: 18px;
+    margin-left: 1rem;
 }
 
 nav ul a:hover {
     font-size: 17px;
 }
+
 
 
 
@@ -57,7 +71,7 @@ nav ul a:hover {
     background: #0066ff;
     color: #fff;
     border-radius: 4px;
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
 .btn:hover {
@@ -67,11 +81,33 @@ nav ul a:hover {
 
 /* 메인 */
 main {
-    padding-top: 80px;
+    padding-top: 5rem;
+}
+
+/* 공통 섹션 내부 */
+.section-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
 section {
-    padding: 64px 32px;
+    padding: 0;
+}
+
+/* 섹션별 배경색 */
+
+#skill,
+#certificate,
+#contact,
+#project {
+    background: white;
+}
+
+#intro,
+#experience,
+#study {
+    background: #f9f9f9;
 }
 
 /* 소개 */
@@ -79,7 +115,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 2rem;
+}
+
+.about h1 {
+    font-size: 2.5rem;
 }
 
 .img {
@@ -90,24 +130,24 @@ section {
 }
 
 .intro-text {
-    max-width: 600px;
+    max-width: 500px;
     animation: slideIn 1s ease-in-out;
 }
 
 h2 {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 32px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     position: relative;
 }
 
 h2::after {
     content: '';
-    width: 80px;
+    width: 4rem;
     height: 4px;
     background: #0066ff;
     position: absolute;
-    bottom: -9px;
+    bottom: -0.5rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -117,20 +157,411 @@ h2::after {
 .box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
+    gap: 2rem;
+
 }
 
-.card,
-blockquote {
+.card {
     background: white;
-    padding: 24px;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
+/*푸터*/
 footer {
     text-align: center;
-    padding: 32px;
-    background: #f1f1f1;
+    padding: 1.2rem;
+    background: #f9f9f9;
+}
+
+
+/* 반응형 */
+@media (max-width:768px) {
+
+    /* 창 줄어들면 위아래로 정렬 */
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* 애니메이션(써치함..) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 소셜 아이콘 */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: #0066ff;
+    transform: scale(1.2);
+}
+
+
+/* About Box (Skills, Experience 각각 독립 박스) */
+.about-box {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.certificate-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.certificate-tags span {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 0.4rem 0.75rem;
+    border-radius: 9999px;
+}
+
+
+/* Experience List */
+.experience-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* 로고 영역 */
+.company-logo {
+    flex: 0 0 150px;
+    height: 150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.experience-content {
+    flex: 1;
+}
+
+.experience-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.experience-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.experience-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+
+/* === 반응형 === */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .skill-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-date {
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+/* Project Section */
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 1 1 50%;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-width: 300px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.project-image a:hover img {
+    transform: scale(1.05);
+}
+
+.project-description {
+    flex: 1 1 50%;
+    padding: 2rem;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-description h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.project-description p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tags span {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 0.4rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+}
+
+.project-link {
+    font-size: 1.25rem;
+    color: #6b7280;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: #2563eb;
+}
+
+
+@media (max-width: 768px) {
+
+    .project-content,
+    .project-content.reverse {
+        flex-direction: column;
+    }
+
+    .project-image,
+    .project-description {
+        flex: 1 1 100%;
+        min-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .project-card {
+        border-radius: 12px;
+    }
+}
+
+
+.contact-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+}
+
+.contact-message {
+    font-size: 1.3rem;
+    color: #374151;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #111827;
+    font-size: 2rem;
+}
+
+.contact-item i {
+    font-size: 1.4rem;
+    color: #4b5563;
+}
+
+.contact-socials {
+    margin-top: 1rem;
+}
+
+.contact-socials a {
+    margin: 0 0.6rem;
+    font-size: 1.6rem;
+    color: #6b7280;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-socials a:hover {
+    color: #0066ff;
+    transform: scale(1.2);
+}
+
+.copy-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.copy-icon:hover {
+    transform: scale(1.2);
 }

@@ -2,60 +2,212 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로필</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
 
     <nav>
-        <div class="logo">Portfolio</div>
-        <ul>
-            <li><a href="#intro">소개</a></li>
-            <li><a href="#portfolio">포트폴리오</a></li>
-            <li><a href="#study">스터디</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">Portfolio</a>
+            </div>
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#project">project</a></li>
+                <li><a href="#study">study</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
-        <section id="intro" class="about">
-            <div class="intro-text">
-                <h1>안녕하세요</h1>
-                <p>개발자를 꿈꾸는 오지영입니다</p>
-                
+        <section id="intro">
+            <div class="section-inner about">
+                <div class="intro-text">
+                    <h1>안녕하세요</h1>
+                    <p>Full‑stack developer passionate about creating clean and performant web experiences.</p>
+                    <a href="resume.pdf" class="btn">click</a>
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2024/05/20/13/28/ai-generated-8775232_1280.png" alt="프로필 사진"
+                    class="img" />
             </div>
-            <img src="https://cdn.pixabay.com/photo/2024/05/20/13/28/ai-generated-8775232_1280.png" alt="프로필 사진" class="img" />
         </section>
 
-        <section id="portfolio">
-            <h2>project</h2>
-            <div class="box">
-                <div class="card">프로젝트 1</div>
-                <div class="card">프로젝트 2</div>
-                <div class="card">프로젝트 3</div>
+        <section id="about" style="background:white;">
+            <div class="section-inner">
+                <div class="about-box">
+                    <h2 class="section-title">Skill</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card"><img src="img/java-original-wordmark.png" alt="Java">
+                            <p>Java</p>
+                        </div>
+                        <div class="skill-card"><img src="img/mysql-original-wordmark.png" alt="MySQL">
+                            <p>MySQL</p>
+                        </div>
+                        <div class="skill-card"><img src="img/oracle-original.png" alt="Oracle">
+                            <p>Oracle</p>
+                        </div>
+                        <div class="skill-card"><img src="img/python-original.png" alt="Python">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-card"><img src="img/r-original.png" alt="R">
+                            <p>R</p>
+                        </div>
+                        <div class="skill-card"><img src="img/rstudio-original.png" alt="RStudio">
+                            <p>RStudio</p>
+                        </div>
+                        <div class="skill-card"><img src="img/spring-original.png" alt="Spring">
+                            <p>Spring</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-box">
+                    <h2 class="section-title">Certificates</h2>
+                    <div class="certificate-tags">
+                        <span>SQLD</span>
+                        <span>정보처리기사</span>
+                        <span>TOEIC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-inner">
+                <div class="about-box">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="experience-list">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="company-logo">
+                                    <img src="img/wooriA_logo.png" alt="우리 FISA Logo">
+                                </div>
+                                <div class="experience-content">
+                                    <h3>우리 FISA</h3>
+                                    <ul>
+                                        <li>클라우드 서비스 개발 과정</li>
+                                        <li>내용 들어갈 예정</li>
+                                        <li>내용 들어갈 예정</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-date">Jul 2025 – Present</div>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="company-logo">
+                                    <img src="img/likelion_logo.jpg" alt="멋쟁이사자처럼 로고">
+                                </div>
+                                <div class="experience-content">
+                                    <h3>멋쟁이사자처럼 대학 11기</h3>
+                                    <ul>
+                                        <li>백엔드 트랙</li>
+                                        <li>아이디어톤</li>
+                                        <li>중앙 해커톤</li>
+                                        <li>중앙 해커톤</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-date">Mar 2023 – Dec 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project">
+            <div class="section-inner">
+                <h2 class="section-title">Project</h2>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="img/ham.jpg" alt="프로젝트 이미지" />
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            <h3>프로젝트 1</h3>
+                            <p>This sentence is just a placeholder filled with dancing commas and imaginary ideas.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Typescript</span><span>Docker</span>
+                                <span>Firebase</span><span>Express.js</span><span>PostgreSQL</span>
+                                <span>GraphQL</span><span>Redis</span>
+                            </div>
+                            <a href="https://github.com/" class="project-link" target="_blank">🔗</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content reverse">
+                        <div class="project-image">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="img/frogpepe.png" alt="프로젝트 이미지" />
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            <h3>프로젝트 2</h3>
+                            <p>This sentence is just a placeholder filled with dancing commas and imaginary ideas.</p>
+                            <div class="project-tags">
+                                <span>Java</span><span>Spring Boot</span><span>JPA</span>
+                                <span>Hibernate</span><span>PostgreSQL</span><span>Spring Security</span>
+                                <span>Redis</span><span>JUnit</span><span>Swagger</span>
+                                <span>Docker</span><span>MySQL</span><span>Postman</span>
+                                <span>AWS</span>
+                            </div>
+                            <a href="https://github.com/" class="project-link" target="_blank">🔗</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="study">
-            <h2>study</h2>
-            <div class="box">
-                <blockquote>스터디 1</blockquote>
-                <blockquote>스터디 2</blockquote>
+            <div class="section-inner">
+                <h2>Study</h2>
+                <div class="box">
+                    <div class="card">스터디 1</div>
+                    <div class="card">스터디 2</div>
+                </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>contact</h2>
-            <p>Email: example@email.com</p>
-            <p>LinkedIn / GitHub 링크</p>
+            <div class="section-inner contact-section">
+                <h2>Contact</h2>
+                <!-- <p class="contact-message">What’s next? Feel free to reach out to me.</p> -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-text">example@email.com</span>
+                        <img src="img/copy.png" alt="Copy Email Icon" class="copy-icon" />
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span class="contact-text">+82 10-1234-5678</span>
+                        <img src="img/copy.png" alt="Copy Phone Icon" class="copy-icon" />
+                    </div>
+                </div>
+                <div class="social-links contact-socials">
+                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>깃허브</p>
+        <p>@@</p>
     </footer>
 
 </body>
