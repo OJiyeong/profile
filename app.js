@@ -1,5 +1,4 @@
-
-// 클립보드 복사 기능
+// copy 기능
 class ClipboardManager {
     constructor() {
         this.init();
@@ -52,29 +51,52 @@ class ClipboardManager {
 // 스크롤 효과
 class ScrollAnimator {
     constructor() {
+        this.sections = document.querySelectorAll('.section');
+        this.current = 0;
+        this.isScrolling = false;
+        this.navHeight = document.querySelector('nav').offsetHeight; // 네비 높이 계산
         this.init();
     }
 
     init() {
-        this.observeElements();
+        window.addEventListener('wheel', (e) => this.onScroll(e), { passive: false });
     }
 
-    observeElements() {
-        const elements = document.querySelectorAll('.card, .experience-card, .project-card');
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
+    onScroll(e) {
+        const currentSection = this.sections[this.current];
+        const sectionRect = currentSection.getBoundingClientRect();
 
-        elements.forEach(el => observer.observe(el));
+        const remainingScroll = sectionRect.bottom - window.innerHeight;
+
+        if ((e.deltaY > 0 && remainingScroll > 0) || (e.deltaY < 0 && sectionRect.top < 0)) {
+            return; // 남은 영역 있으면 자연 스크롤
+        }
+
+        e.preventDefault();
+        if (this.isScrolling) return;
+
+        this.isScrolling = true;
+        if (e.deltaY > 0) {
+            this.current = Math.min(this.current + 1, this.sections.length - 1);
+        } else {
+            this.current = Math.max(this.current - 1, 0);
+        }
+
+        const targetSection = this.sections[this.current];
+        const targetPosition = targetSection.offsetTop - this.navHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+
+        setTimeout(() => this.isScrolling = false, 800);
     }
 }
+new ScrollAnimator();
+
+
+
 
 // 앱 초기화
 document.addEventListener('DOMContentLoaded', () => {
