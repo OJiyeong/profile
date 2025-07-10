@@ -2,214 +2,272 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프로필</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full-stack Developer Portfolio">
+    <title>Portfolio - Full-stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
 </head>
 
 <body>
-
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#">Portfolio</a>
+    <nav class="nav">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a href="#" aria-label="포트폴리오 홈">Portfolio</a>
             </div>
-            <ul>
-                <li><a href="#about">about</a></li>
-                <li><a href="#project">project</a></li>
-                <li><a href="#study">study</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav__menu">
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#projects" class="nav__link">Projects</a></li>
+                <li><a href="#study" class="nav__link">Study</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <section id="intro">
-            <div class="section-inner about">
-                <div class="intro-text">
-                    <h1>안녕하세요</h1>
-                    <p>Full‑stack developer passionate about creating clean and performant web experiences.</p>
-                    <a href="resume.pdf" class="btn">click</a>
-                    <div class="social-links">
-                        <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="section section--gray">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero__content">
+                        <h1 class="hero__title">안녕하세요</h1>
+                        <p class="hero__description">
+                            Full-stack developer passionate about creating clean and performant web experiences.
+                        </p>
+                        <a href="resume.pdf" class="btn" aria-label="이력서 다운로드">Resume</a>
+                        <div class="social-links">
+                            <a href="https://github.com/" target="_blank" class="social-links__link"
+                                aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/" target="_blank" class="social-links__link"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero__image">
+                        <img src="img/intro.png" alt="개발자 프로필 사진" class="hero__avatar">
                     </div>
                 </div>
-                <img src="https://cdn.pixabay.com/photo/2024/05/20/13/28/ai-generated-8775232_1280.png" alt="프로필 사진"
-                    class="img" />
             </div>
         </section>
 
-        <section id="about" style="background:white;">
-            <div class="section-inner">
-                <div class="about-box">
-                    <h2 class="section-title">Skill</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card"><img src="img/java-original-wordmark.png" alt="Java">
-                            <p>Java</p>
+        <!-- About Section -->
+        <section id="about" class="section section--white">
+            <div class="container">
+                <!-- Skills -->
+                <div class="card" style="margin-bottom: 3rem;">
+                    <h2 class="title">Skills</h2>
+                    <div class="grid grid--skills">
+                        <div class="skill-card">
+                            <img src="img/java-original-wordmark.png" alt="Java" class="skill-card__icon">
+                            <p class="skill-card__name">Java</p>
                         </div>
-                        <div class="skill-card"><img src="img/mysql-original-wordmark.png" alt="MySQL">
-                            <p>MySQL</p>
+                        <div class="skill-card">
+                            <img src="img/mysql-original-wordmark.png" alt="MySQL" class="skill-card__icon">
+                            <p class="skill-card__name">MySQL</p>
                         </div>
-                        <div class="skill-card"><img src="img/oracle-original.png" alt="Oracle">
-                            <p>Oracle</p>
+                        <div class="skill-card">
+                            <img src="img/oracle-original.png" alt="Oracle" class="skill-card__icon">
+                            <p class="skill-card__name">Oracle</p>
                         </div>
-                        <div class="skill-card"><img src="img/python-original.png" alt="Python">
-                            <p>Python</p>
+                        <div class="skill-card">
+                            <img src="img/python-original.png" alt="Python" class="skill-card__icon">
+                            <p class="skill-card__name">Python</p>
                         </div>
-                        <div class="skill-card"><img src="img/r-original.png" alt="R">
-                            <p>R</p>
+                        <div class="skill-card">
+                            <img src="img/r-original.png" alt="R" class="skill-card__icon">
+                            <p class="skill-card__name">R</p>
                         </div>
-                        <div class="skill-card"><img src="img/rstudio-original.png" alt="RStudio">
-                            <p>RStudio</p>
+                        <div class="skill-card">
+                            <img src="img/rstudio-original.png" alt="RStudio" class="skill-card__icon">
+                            <p class="skill-card__name">RStudio</p>
                         </div>
-                        <div class="skill-card"><img src="img/spring-original.png" alt="Spring">
-                            <p>Spring</p>
+                        <div class="skill-card">
+                            <img src="img/spring-original.png" alt="Spring" class="skill-card__icon">
+                            <p class="skill-card__name">Spring</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-box">
-                    <h2 class="section-title">Certificates</h2>
+                <!-- Certificates -->
+                <div class="card">
+                    <h2 class="title">Certificates</h2>
                     <div class="certificate-tags">
-                        <span>SQLD</span>
-                        <span>정보처리기사</span>
-                        <span>TOEIC</span>
+                        <span class="tag">SQLD</span>
+                        <span class="tag">정보처리기사</span>
+                        <span class="tag">TOEIC</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <div class="section-inner">
-                <div class="about-box">
-                    <h2 class="section-title">Experience</h2>
-                    <div class="experience-list">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <div class="company-logo">
-                                    <img src="img/wooriA_logo.png" alt="우리 FISA Logo">
-                                </div>
-                                <div class="experience-content">
-                                    <h3>우리 FISA</h3>
-                                    <ul>
-                                        <li>클라우드 서비스 개발 과정</li>
-                                        <li>내용 들어갈 예정</li>
-                                        <li>내용 들어갈 예정</li>
-                                    </ul>
-                                </div>
-                                <div class="experience-date">Jul 2025 – Present</div>
-                            </div>
+        <!-- Experience Section -->
+        <section class="section section--gray">
+            <div class="container">
+                <h2 class="title">Experience</h2>
+                <div class="grid">
+                    <div class="experience-card">
+                        <div class="experience-card__logo">
+                            <img src="img/wooriA_logo.png" alt="우리 FISA">
                         </div>
-
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <div class="company-logo">
-                                    <img src="img/likelion_logo.jpg" alt="멋쟁이사자처럼 로고">
-                                </div>
-                                <div class="experience-content">
-                                    <h3>멋쟁이사자처럼 대학 11기</h3>
-                                    <ul>
-                                        <li>백엔드 트랙</li>
-                                        <li>아이디어톤</li>
-                                        <li>중앙 해커톤</li>
-                                        <li>중앙 해커톤</li>
-                                    </ul>
-                                </div>
-                                <div class="experience-date">Mar 2023 – Dec 2023</div>
-                            </div>
+                        <div class="experience-card__content">
+                            <h3 class="experience-card__title">우리 FISA</h3>
+                            <ul class="experience-card__list">
+                                <li>클라우드 서비스 개발 과정</li>
+                                <li>풀스택 개발 역량 강화</li>
+                                <li>협업 프로젝트 경험</li>
+                            </ul>
                         </div>
+                        <div class="experience-card__date">Jul 2025 – Present</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-card__logo">
+                            <img src="img/likelion_logo.jpg" alt="멋쟁이사자처럼">
+                        </div>
+                        <div class="experience-card__content">
+                            <h3 class="experience-card__title">멋쟁이사자처럼 대학 11기</h3>
+                            <ul class="experience-card__list">
+                                <li>백엔드 트랙 수료</li>
+                                <li>아이디어톤 참여</li>
+                                <li>중앙 해커톤 참여</li>
+                                <li>팀 프로젝트 협업</li>
+                            </ul>
+                        </div>
+                        <div class="experience-card__date">Mar 2023 – Dec 2023</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="project">
-            <div class="section-inner">
-                <h2 class="section-title">Project</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="section section--white">
+            <div class="container">
+                <h2 class="title">Projects</h2>
+
                 <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-image">
+                    <div class="project-card__content">
+                        <div class="project-card__image">
                             <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                                <img src="img/ham.jpg" alt="프로젝트 이미지" />
+                                <img src="img/ham.jpg" alt="프로젝트 1 스크린샷">
                             </a>
                         </div>
-                        <div class="project-description">
-                            <h3>프로젝트 1</h3>
-                            <p>This sentence is just a placeholder filled with dancing commas and imaginary ideas.</p>
-                            <div class="project-tags">
-                                <span>Node.js</span><span>Typescript</span><span>Docker</span>
-                                <span>Firebase</span><span>Express.js</span><span>PostgreSQL</span>
-                                <span>GraphQL</span><span>Redis</span>
+                        <div class="project-card__description">
+                            <h3 class="project-card__title">프로젝트 1</h3>
+                            <p class="project-card__text">
+                                Modern web application built with cutting-edge technologies for optimal performance and
+                                user experience.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Express.js</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">GraphQL</span>
+                                <span class="tag">Redis</span>
                             </div>
-                            <a href="https://github.com/" class="project-link" target="_blank">🔗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content reverse">
-                        <div class="project-image">
-                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                                <img src="img/frogpepe.png" alt="프로젝트 이미지" />
+                            <a href="https://github.com/" class="project-card__link" target="_blank"
+                                aria-label="프로젝트 1 GitHub">
+                                🔗
                             </a>
                         </div>
-                        <div class="project-description">
-                            <h3>프로젝트 2</h3>
-                            <p>This sentence is just a placeholder filled with dancing commas and imaginary ideas.</p>
-                            <div class="project-tags">
-                                <span>Java</span><span>Spring Boot</span><span>JPA</span>
-                                <span>Hibernate</span><span>PostgreSQL</span><span>Spring Security</span>
-                                <span>Redis</span><span>JUnit</span><span>Swagger</span>
-                                <span>Docker</span><span>MySQL</span><span>Postman</span>
-                                <span>AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card__content project-card__content--reverse">
+                        <div class="project-card__image">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="img/frogpepe.png" alt="프로젝트 2 스크린샷">
+                            </a>
+                        </div>
+                        <div class="project-card__description">
+                            <h3 class="project-card__title">프로젝트 2</h3>
+                            <p class="project-card__text">
+                                Enterprise-level application with robust backend architecture and comprehensive testing
+                                coverage.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">JPA</span>
+                                <span class="tag">Hibernate</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Spring Security</span>
+                                <span class="tag">Redis</span>
+                                <span class="tag">JUnit</span>
+                                <span class="tag">Swagger</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">AWS</span>
                             </div>
-                            <a href="https://github.com/" class="project-link" target="_blank">🔗</a>
+                            <a href="https://github.com/" class="project-card__link" target="_blank"
+                                aria-label="프로젝트 2 GitHub">
+                                🔗
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="study">
-            <div class="section-inner">
-                <h2>Study</h2>
-                <div class="box">
-                    <div class="card">스터디 1</div>
-                    <div class="card">스터디 2</div>
+        <!-- Study Section -->
+        <section id="study" class="section section--gray">
+            <div class="container">
+                <h2 class="title">Study</h2>
+                <div class="grid grid--auto-fit">
+                    <div class="card">
+                        <h3>알고리즘 스터디</h3>
+                        <p>주요 알고리즘 문제 해결 및 최적화 연구</p>
+                    </div>
+                    <div class="card">
+                        <h3>개발 서적 스터디</h3>
+                        <p>Clean Code, 객체지향 설계 등 개발 서적 학습</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="section-inner contact-section">
-                <h2>Contact</h2>
-                <!-- <p class="contact-message">What’s next? Feel free to reach out to me.</p> -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span class="contact-text">example@email.com</span>
-                        <img src="img/copy.png" alt="Copy Email Icon" class="copy-icon" />
+        <!-- Contact Section -->
+        <section id="contact" class="section section--white">
+            <div class="container">
+                <div class="contact">
+                    <h2 class="title">Contact</h2>
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="email">example@email.com</span>
+                            <img src="img/copy.png" alt="이메일 복사" class="copy-btn" data-copy="email">
+                        </div>
+                        <div class="contact__item">
+                            <i class="fas fa-phone"></i>
+                            <span id="phone">+82 10-1234-5678</span>
+                            <img src="img/copy.png" alt="전화번호 복사" class="copy-btn" data-copy="phone">
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span class="contact-text">+82 10-1234-5678</span>
-                        <img src="img/copy.png" alt="Copy Phone Icon" class="copy-icon" />
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank" class="social-links__link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-links__link"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="social-links contact-socials">
-                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>@@</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        </div>
     </footer>
-
 </body>
 
 </html>
